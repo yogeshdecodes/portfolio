@@ -35,20 +35,6 @@ module.exports = {
       },
     },
     {
-<<<<<<< HEAD
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`],
-          },
-        ],
-=======
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
@@ -56,7 +42,6 @@ module.exports = {
           `Open Sans\:400,700`
         ],
         display: 'swap'
->>>>>>> 927c6dc9c953b0d48c40114e14153f8dd5f7f384
       },
     },
     {
