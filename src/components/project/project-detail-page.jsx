@@ -83,11 +83,7 @@ const ProjectDetailPage = ({ post }) => {
       {/* <Author>
         <AvatarSmall />
         <PublishInfo>
-<<<<<<< HEAD
-          <Name>Christian Coda</Name>
-=======
           <Name>Yogesh Yadav</Name>
->>>>>>> 927c6dc9c953b0d48c40114e14153f8dd5f7f384
           <div>{dayjs(post.publishedAt).format("DD MMM YYYY")}</div>
         </PublishInfo>
       </Author> */}

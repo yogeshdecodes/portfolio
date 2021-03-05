@@ -25,13 +25,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-<<<<<<< HEAD
-        name: `christian-coda`,
-        short_name: `christian-coda`,
-=======
         name: `yogesh-decodes`,
         short_name: `yogesh-decodes`,
->>>>>>> 927c6dc9c953b0d48c40114e14153f8dd5f7f384
         start_url: `/`,
         background_color: `#ef476f`,
         theme_color: `#ef476f`,
