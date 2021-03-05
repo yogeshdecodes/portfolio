@@ -25,8 +25,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+<<<<<<< HEAD
         name: `christian-coda`,
         short_name: `christian-coda`,
+=======
+        name: `yogesh-decodes`,
+        short_name: `yogesh-decodes`,
+>>>>>>> 927c6dc9c953b0d48c40114e14153f8dd5f7f384
         start_url: `/`,
         background_color: `#ef476f`,
         theme_color: `#ef476f`,
@@ -35,6 +40,7 @@ module.exports = {
       },
     },
     {
+<<<<<<< HEAD
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
@@ -47,6 +53,15 @@ module.exports = {
             variants: [`400`, `700`],
           },
         ],
+=======
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat\:400,700`,
+          `Open Sans\:400,700`
+        ],
+        display: 'swap'
+>>>>>>> 927c6dc9c953b0d48c40114e14153f8dd5f7f384
       },
     },
     {
