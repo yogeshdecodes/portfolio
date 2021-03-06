@@ -115,9 +115,13 @@ export const query = graphql`
   query {
     bannerImage: file(relativePath: { eq: "laptop.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1920, quality: 95) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+            layout: CONSTRAINED
+            width: 1920
+            quality: 95
+            formats: [AUTO, WEBP]
+            placeholder: BLURRED
+            ) 
       }
     }
     items: allContentfulPortfolioItem {

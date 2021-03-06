@@ -1,9 +1,9 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components";
 
-const Image = styled(Img)`
+const Image = styled(GatsbyImage)`
   border: 8px solid white;
   background-color: white;
   margin-top: 8px;
@@ -17,9 +17,14 @@ const Portrait = () => {
     query {
       placeholderImage: file(relativePath: { eq: "portrait.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 500, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+           gatsbyImageData(
+            layout: CONSTRAINED
+            width: 500
+            quality: 100
+            formats: [AUTO, WEBP]
+            placeholder: BLURRED
+            )
+           
         }
       }
     }

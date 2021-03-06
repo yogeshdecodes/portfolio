@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { string, shape } from "prop-types";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const StyledTestimonial = styled.div`
   position: relative;
@@ -60,7 +60,7 @@ const Testimonial = ({ image, title, text, name }) => {
       <Content>
         <p>{text}</p>
         <Person>
-          <Img fixed={image.fixed} alt={title} />
+          <GatsbyImage image={image.gatsbyImageData} alt={title} />
           <PersonInfo>
             <Name>{name}</Name>
             <JobTitle>{title}</JobTitle>

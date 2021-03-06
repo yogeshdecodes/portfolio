@@ -1,9 +1,9 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components";
 
-const Image = styled(Img)`
+const Image = styled(GatsbyImage)`
   border-radius: 50%;
 `;
 
@@ -12,9 +12,14 @@ const AvatarSmall = () => {
     query {
       placeholderImage: file(relativePath: { eq: "red-chair.jpg" }) {
         childImageSharp {
-          fixed(width: 50, height: 50, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
+           gatsbyImageData(
+            layout: FIXED
+            width: 50
+            height: 50
+            quality: 100
+            formats: [AUTO, WEBP]
+            placeholder: BLURRED
+            )
         }
       }
     }
@@ -22,7 +27,7 @@ const AvatarSmall = () => {
 
   return (
     <Image
-      fixed={data.placeholderImage.childImageSharp.fixed}
+      image={data.placeholderImage.childImageSharp.gatsbyImageData}
       alt="red chair"
     />
   );

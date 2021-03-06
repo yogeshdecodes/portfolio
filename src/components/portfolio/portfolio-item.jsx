@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { string, arrayOf, shape } from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby";
 
 const StyledPorfolioItem = styled.div`
@@ -123,7 +123,7 @@ const PortfolioItem = ({ title, url, image, text, technologies, slug, github }) 
   return (
     <StyledPorfolioItem>
       <ImageContainer>
-        <Img fluid={image.fluid} alt={title} />
+        <GatsbyImage fluid={image.fluid} alt={title} />
       </ImageContainer>
       <TextContainer>
         <h3>{title}</h3>

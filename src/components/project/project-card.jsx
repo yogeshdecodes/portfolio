@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { string, shape, bool, arrayOf } from "prop-types";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby";
 import dayjs from "dayjs";
 import Tag from "./project-tech";
@@ -53,7 +53,7 @@ const Header = styled.div`
   overflow: hidden;
 `;
 
-const HeaderImage = styled(Img)`
+const HeaderImage = styled(GatsbyImage)`
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 

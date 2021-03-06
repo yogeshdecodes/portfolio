@@ -84,18 +84,24 @@ const Intro = () => {
     query {
       mobileImage: file(relativePath: { eq: "waterfall.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 768, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            width: 768
+            quality: 100
+            formats: [AUTO, WEBP]
+            placeholder: BLURRED
+            )
         }
       }
       desktopImage: file(relativePath: { eq: "lake.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1920, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
+           gatsbyImageData(
+            layout: FULL_WIDTH
+            width: 1920
+            quality: 100
+            formats: [AUTO, WEBP]
+            placeholder: BLURRED
+            )
         }
       }
     }

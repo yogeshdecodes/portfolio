@@ -35,10 +35,13 @@ const Technologies = () => {
     query {
       backgroundImage: file(relativePath: { eq: "stowe.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1920, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
+          gatsbyImageData(
+            layout: CONSTRAINED
+            width: 1920
+            quality: 100
+            formats: [AUTO, WEBP]
+            placeholder: BLURRED
+            )
         }
       }
     }
