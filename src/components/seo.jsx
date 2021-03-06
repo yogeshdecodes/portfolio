@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -33,6 +34,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
+      pathname={siteUrl}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {

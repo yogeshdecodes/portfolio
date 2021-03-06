@@ -8,6 +8,7 @@ module.exports = {
     title: `Yogesh Decodes`,
     description: `Yogesh Decodes - Fullstack developer`,
     author: `@yogeshdecodes`,
+    siteUrl: `https://yogeshdecodes.com`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
