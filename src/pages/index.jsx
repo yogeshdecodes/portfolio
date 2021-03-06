@@ -53,9 +53,13 @@ export const query = graphql`
           }
           headerImage {
             title
-            fluid(quality: 95) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              quality: 95
+              formats: [AUTO, WEBP]
+              placeholder: BLURRED
+              )
+             
           }
         }
       }

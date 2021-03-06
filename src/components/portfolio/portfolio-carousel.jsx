@@ -97,9 +97,12 @@ const PortfolioCarousel = () => {
             order
             image {
               title
-              fluid(quality: 95) {
-                ...GatsbyContentfulFluid_withWebp
-              }
+              gatsbyImageData(
+              layout: FULL_WIDTH
+              quality: 95
+              formats: [AUTO, WEBP]
+              placeholder: BLURRED
+              )
             }
           }
         }

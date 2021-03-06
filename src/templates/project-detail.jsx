@@ -98,7 +98,7 @@ ProjectDetail.propTypes = {
   data: shape({
     post: shape({
       title: string.isRequired,
-      content: shape({ json: shape({}).isRequired }).isRequired,
+      // content: shape({ json: shape({}).isRequired }).isRequired,
       publishedAt: string.isRequired,
       headerImage: shape({}).isRequired,
     }).isRequired,
@@ -124,13 +124,19 @@ export const query = graphql`
       title
       slug 
       technologies
-      content {
-        json
+      bodyRichText  {
+        raw
       }
       image {
         title
         fluid(quality: 95) {
-          ...GatsbyContentfulFluid_withWebp
+          gatsbyImageData(
+              layout: FULL_WIDTH
+              quality: 95
+              formats: [AUTO, WEBP]
+              placeholder: BLURRED
+              )
+           
         }
       }
     }

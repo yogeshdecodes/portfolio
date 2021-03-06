@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { MARKS, BLOCKS } from "@contentful/rich-text-types";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { shape, string, arrayOf } from "prop-types";
@@ -92,7 +92,7 @@ const BlogPostDetail = ({ post }) => {
         <Tag key={t} text={t} />
       ))}
       <Splitter />
-      {documentToReactComponents(post.content.json, options)}
+      {renderRichText(post.bodyRichText, options)}
     </Post>
   );
 };
@@ -101,7 +101,7 @@ BlogPostDetail.propTypes = {
   post: shape({
     title: string.isRequired,
     tags: arrayOf(string).isRequired,
-    content: shape({ json: shape({}).isRequired }).isRequired,
+    // content: shape({ json: shape({}).isRequired }).isRequired,
     publishedAt: string.isRequired,
   }).isRequired,
 };

@@ -98,7 +98,7 @@ BlogPost.propTypes = {
   data: shape({
     post: shape({
       title: string.isRequired,
-      content: shape({ json: shape({}).isRequired }).isRequired,
+      // content: shape({ json: shape({}).isRequired }).isRequired,
       publishedAt: string.isRequired,
       headerImage: shape({}).isRequired,
     }).isRequired,
@@ -125,14 +125,18 @@ export const query = graphql`
       slug
       publishedAt
       tags
-      content {
-        json
+      bodyRichText  {
+        raw
       }
       headerImage {
         title
-        fluid(quality: 95) {
-          ...GatsbyContentfulFluid_withWebp
-        }
+        gatsbyImageData(
+              layout: FULL_WIDTH
+              quality: 95
+              formats: [AUTO, WEBP]
+              placeholder: BLURRED
+              )
+         
       }
     }
   }
