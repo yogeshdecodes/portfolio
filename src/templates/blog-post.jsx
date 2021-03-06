@@ -98,7 +98,7 @@ BlogPost.propTypes = {
   data: shape({
     post: shape({
       title: string.isRequired,
-      // content: shape({ json: shape({}).isRequired }).isRequired,
+      content: shape({ json: shape({}).isRequired }).isRequired,
       publishedAt: string.isRequired,
       headerImage: shape({}).isRequired,
     }).isRequired,
@@ -125,8 +125,8 @@ export const query = graphql`
       slug
       publishedAt
       tags
-      bodyRichText  {
-        raw
+      content {
+        json
       }
       headerImage {
         title
