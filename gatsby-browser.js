@@ -10,7 +10,7 @@
 
 //persist last known scrolling positions and scrolling back
 //using api https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#shouldUpdateScroll
-export const shouldUpdateScroll = ({ routerProps }) => {
+exports.shouldUpdateScroll = ({ routerProps }) => {
   const hasAnchor = !!routerProps.location.hash; 
   return hasAnchor
 }
