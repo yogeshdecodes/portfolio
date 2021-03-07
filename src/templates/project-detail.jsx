@@ -40,6 +40,12 @@ const Splitter = styled.hr`
   border-color: ${(props) => props.theme.typography.colors.textEmphasis};
 `;
 
+const TopHeader = styled.div`
+   
+  margin-bottom: 5rem;
+   
+`;
+
 const ProjectDetail = ({ data }) => {
   const { post } = data;
   const { edges: posts } = data.posts;
@@ -59,7 +65,8 @@ const ProjectDetail = ({ data }) => {
   return (
     <Layout>
       <SEO title={post.title} />
-      <ProjectBanner image={post.image} />
+      <TopHeader/>
+      {/* <ProjectBanner image={post.image} /> */}
       <Section>
         <Container>
           <ProjectDetailPage post={post} />

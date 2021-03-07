@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 
 const Links = styled.div`
   text-align: center;
-  margin: 1rem 0 2rem 0;
+  
 
   a {
     border: 1px solid ${(props) => props.theme.brand.primary};

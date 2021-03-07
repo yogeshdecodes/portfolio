@@ -14,7 +14,7 @@ const Carousel = styled.div`
 
 const SlideNew = styled.div`
   display: block;
-  padding-bottom: 6rem; 
+  padding-bottom: 2rem; 
   
 
   ${(props) => props.theme.breakpoints.md} {
