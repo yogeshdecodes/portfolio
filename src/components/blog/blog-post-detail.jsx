@@ -8,6 +8,7 @@ import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import dayjs from "dayjs";
 import AvatarSmall from "../avatar/avatar-small";
 import Tag from "./blog-post-tag";
+import BlockQuote from "../BlockQuote/blockquote";
 
 const Post = styled.div`
   padding: 2rem 0;
@@ -61,6 +62,44 @@ const BlogPostDetail = ({ post }) => {
         }
         return <p>{children}</p>;
       },
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      // const alt = node.data.target.fields.title['en-US']
+      // const url = node.data.target.fields.file['en-US'].url
+      // return <img src={url} alt={alt} />
+      const { title, description, file } = node.data.target.fields;
+      const mimeType = file['en-US'].contentType
+      const mimeGroup = mimeType.split('/')[0]
+
+      switch (mimeGroup) {
+        case 'image':
+          return <img
+            title={ title ? title['en-US'] : null}
+            alt={description ?  description['en-US'] : null}
+            src={file['en-US'].url}
+          />
+        case 'application':
+          return <a
+            alt={description ?  description['en-US'] : null}
+            href={file['en-US'].url}
+            >{ title ? title['en-US'] : file['en-US'].details.fileName }
+          </a>
+        default:
+          return <span style={{backgroundColor: 'red', color: 'white'}}> {mimeType} embedded asset </span>
+      }
+      
+    },
+    [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+      const fields = node.data.target.fields;
+      switch (node.data.target.sys.contentType.sys.id) {
+        case 'blockquote':
+          return <div>
+            <BlockQuote quoteText={fields.quoteText['en-US']} quoter={fields.quoter['en-US']}/>
+          </div>
+        default:
+          return <div>???????????????  </div>
+
+      }
+    },
     },
     renderMark: {
       [MARKS.CODE]: (text) => {

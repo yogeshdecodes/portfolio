@@ -128,23 +128,23 @@ const PortfolioItem = ({ title, url, image, text, technologies, slug, github }) 
       <TextContainer>
         <h3>{title}</h3>
         <ProjectLink>
-          <li>
-            <a href={github}
+          {github &&<li>
+             <a href={github}
             target="_blank"
               rel="noopener noreferrer"
             >
                 <FontAwesomeIcon icon={["fab", "github"]} size={size} />
-            </a>
-          </li>
-          <li>
+            </a> 
+          </li>}
+          {url &&<li>
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon="external-link-alt" size={size} />
-            </a>
-          </li>
+            </a> 
+          </li>}
         </ProjectLink>
         {/* <a href={url} target="_blank" rel="noopener noreferrer">
           {urlText}
