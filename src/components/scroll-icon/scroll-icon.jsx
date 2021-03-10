@@ -4,7 +4,7 @@ import { string } from "prop-types";
 import { Link } from "react-scroll";
 
 const StyledScrollIcon = styled.div`
-  display: none;
+  display: block;
   cursor: pointer;
   border: 2px solid #fff;
   border-radius: 16px;

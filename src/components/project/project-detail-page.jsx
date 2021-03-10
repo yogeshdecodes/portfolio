@@ -9,7 +9,8 @@ import dayjs from "dayjs";
 import AvatarSmall from "../avatar/avatar-small";
 import Tag from "./project-tech";
 import BlockQuote from "../BlockQuote/blockquote";
-
+import Img from "gatsby-image";
+import { getFluidGatsbyImage } from '../getFluidGatsbyImage'
 
 const Post = styled.div`
   padding: 2rem 0;
@@ -51,6 +52,15 @@ const Name = styled.div`
   font-size: 1.125rem;
 `;
 
+// const Image = styled(Img)`
+//   border: 8px solid white;
+//   background-color: white;
+//   margin-top: 8px;
+//   text-align: center;
+//   box-shadow: ${(props) => props.theme.card.shadow};
+//   border-radius: 0.25rem;
+// `;
+
 const ProjectDetailPage = ({ post }) => {
   const options = {
     renderNode: {
@@ -64,29 +74,34 @@ const ProjectDetailPage = ({ post }) => {
         return <p>{children}</p>;
       },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-      // const alt = node.data.target.fields.title['en-US']
-      // const url = node.data.target.fields.file['en-US'].url
-      // return <img src={url} alt={alt} />
-      const { title, description, file } = node.data.target.fields;
-      const mimeType = file['en-US'].contentType
-      const mimeGroup = mimeType.split('/')[0]
+        const { file, title } = node.data.target.fields
+          const image = {
+            file: file['en-US'],
+          }
+      // const alt = node.data?.target?.fields?.title['en-US']
+      // const image = node.data?.target?.fields?.file['en-US']?.url
+      const fluidProps = getFluidGatsbyImage(image, { maxWidth: 720 })
+      return <Img fluid={fluidProps} alt={title['en-US']} />
+      // const { title, description, file } = node.data.target.fields;
+      // const mimeType = file['en-US'].contentType
+      // const mimeGroup = mimeType.split('/')[0]
 
-      switch (mimeGroup) {
-        case 'image':
-          return <img
-            title={ title ? title['en-US'] : null}
-            alt={description ?  description['en-US'] : null}
-            src={file['en-US'].url}
-          />
-        case 'application':
-          return <a
-            alt={description ?  description['en-US'] : null}
-            href={file['en-US'].url}
-            >{ title ? title['en-US'] : file['en-US'].details.fileName }
-          </a>
-        default:
-          return <span style={{backgroundColor: 'red', color: 'white'}}> {mimeType} embedded asset </span>
-      }
+      // switch (mimeGroup) {
+      //   case 'image':
+      //     return <img
+      //       title={ title ? title['en-US'] : null}
+      //       alt={description ?  description['en-US'] : null}
+      //       src={file['en-US'].url}
+      //     />
+      //   case 'application':
+      //     return <a
+      //       alt={description ?  description['en-US'] : null}
+      //       href={file['en-US'].url}
+      //       >{ title ? title['en-US'] : file['en-US'].details.fileName }
+      //     </a>
+      //   default:
+      //     return <span style={{backgroundColor: 'red', color: 'white'}}> {mimeType} embedded asset </span>
+      // }
       
     },
     [BLOCKS.EMBEDDED_ENTRY]: (node) => {
