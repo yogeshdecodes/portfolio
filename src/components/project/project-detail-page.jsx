@@ -52,13 +52,14 @@ const Name = styled.div`
   font-size: 1.125rem;
 `;
 
-const Image = styled(Img)`
-  border: 8px solid white;
-   
-  
-   
-  
-`;
+// const Image = styled(Img)`
+//   border: 8px solid white;
+//   background-color: white;
+//   margin-top: 8px;
+//   text-align: center;
+//   box-shadow: ${(props) => props.theme.card.shadow};
+//   border-radius: 0.25rem;
+// `;
 
 const ProjectDetailPage = ({ post }) => {
   const options = {
@@ -80,7 +81,7 @@ const ProjectDetailPage = ({ post }) => {
       // const alt = node.data?.target?.fields?.title['en-US']
       // const image = node.data?.target?.fields?.file['en-US']?.url
       const fluidProps = getFluidGatsbyImage(image, { maxWidth: 720 })
-      return <Image fluid={fluidProps} alt={title['en-US']} />
+      return <Img fluid={fluidProps} alt={title['en-US']} />
       // const { title, description, file } = node.data.target.fields;
       // const mimeType = file['en-US'].contentType
       // const mimeGroup = mimeType.split('/')[0]
