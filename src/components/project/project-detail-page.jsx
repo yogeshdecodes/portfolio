@@ -55,6 +55,8 @@ const StyleBlockQuote = styled.div`
   border-left: 6px solid rgb(239, 71, 111);
   padding: 15px 15px 15px 20px;
   border-radius: 5px;
+  font-style:italic;
+  background:${(props) => props.theme.section.backgroundDark};
 `;
 
 const ProjectDetailPage = ({ post }) => {
