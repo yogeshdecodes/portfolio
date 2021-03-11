@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { MARKS, BLOCKS } from "@contentful/rich-text-types";
+import { MARKS, BLOCKS, INLINES  } from "@contentful/rich-text-types";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { shape, string, arrayOf } from "prop-types";
 import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -61,6 +61,20 @@ const Name = styled.div`
 //   border-radius: 0.25rem;
 // `;
 
+const IframeContainer = styled.span`
+  padding-bottom: 56.25%; 
+  position: relative; 
+  display: block; 
+  width: 100%;
+
+  > iframe {
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+  }`
+
 const ProjectDetailPage = ({ post }) => {
   const options = {
     renderNode: {
@@ -116,6 +130,14 @@ const ProjectDetailPage = ({ post }) => {
 
       }
     },
+    [INLINES.HYPERLINK]: (node) => {
+        if((node.data.uri).includes("player.vimeo.com/video")){
+          return <IframeContainer><iframe title="Unique Title 001" src={node.data.uri} frameBorder="0" allowFullScreen></iframe></IframeContainer>
+        } else if((node.data.uri).includes("youtube.com/embed")) {
+          return <IframeContainer><iframe title="Unique Title 002" src={node.data.uri} allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" frameBorder="0" allowFullScreen></iframe></IframeContainer>
+        }else { return <a  href={node.data.uri} target="_blank" rel="noreferrer">
+          {node.content[0].value}
+        </a>}},
     },
     renderMark: {
       [MARKS.CODE]: (text) => {
