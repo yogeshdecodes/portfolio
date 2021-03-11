@@ -8,3 +8,9 @@
 // //PASTE THE SNIPPET CODE HERE AND REMOVE THE 'BEGINNING OF and END OF TAWK.TO SNIPPET COMMENTS'
 // }
 
+//persist last known scrolling positions and scrolling back
+//using api https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#shouldUpdateScroll
+export const shouldUpdateScroll = ({ routerProps }) => {
+  const hasAnchor = !!routerProps.location.hash; 
+  return hasAnchor
+}

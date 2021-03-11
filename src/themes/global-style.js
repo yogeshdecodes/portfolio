@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
     background-color: ${(props) => props.theme.footer.backgroundColor};
-    overflow: auto;
+     
   }
 
   code {
