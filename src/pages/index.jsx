@@ -8,7 +8,6 @@ import About from "../components/about/about";
 import Skills from "../components/skills/skills";
 import Technologies from "../components/technologies/technologies";
 import Portfolio from "../components/portfolio/portfolio";
-import Testimonials from "../components/testimonials/testimonials";
 import Blog from "../components/blog/blog";
 
 const IndexPage = ({ data }) => {
@@ -21,8 +20,6 @@ const IndexPage = ({ data }) => {
       <Technologies />
       <Portfolio />
       <Blog posts={data.blogPosts.edges} />
-      
-      {/* <Testimonials /> */}
     </Layout>
   );
 };
