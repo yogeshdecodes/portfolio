@@ -120,7 +120,7 @@ export const query = graphql`
         }
       }
     }
-    items: allContentfulPortfolioItem {
+    items: allContentfulPortfolioItem(sort: { fields: [order], order: ASC }) {
       edges {
         node {
          title
