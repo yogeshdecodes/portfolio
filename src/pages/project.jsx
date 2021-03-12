@@ -90,7 +90,7 @@ const ProjectPage = ({ data }) => (
                 Hi, I&apos;m Yogesh. I&apos;m a full stack software developer
                 from India. When I&apos;m not
                 making web applications, I&apos;m exploring
-                the world.
+                new places.
               </p>
               <SocialMedia />
             </Author>
