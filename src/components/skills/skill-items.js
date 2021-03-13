@@ -40,7 +40,7 @@ const getSkills = () => {
       icon: "palette",
       title: "Design",
       text:
-        "My favourite tool to streamline my UI/UX workflow is Figma. I use it for low fidelity Wireframes to high fidelity Prototyping. For Agile process, I use Notion's Kanban as Scrum board.",
+        "My favourite tool to streamline my UI/UX workflow is Figma. I use it for low fidelity Wireframes to high fidelity Prototyping. For Agile Workflow, I use Notion's Kanban as Scrum board.",
     },
   ];
 };

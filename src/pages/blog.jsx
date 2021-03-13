@@ -83,9 +83,8 @@ const BlogPage = ({ data }) => (
               <h1>Yogesh Yadav</h1>
               <p>
                 Hi, I&apos;m Yogesh. I&apos;m a full stack software developer
-                from India. When I&apos;m not
-                making web applications, I&apos;m exploring
-                the world.
+                from India. When away from my laptop, I like to explore
+                new places.
               </p>
               <SocialMedia />
             </Author>

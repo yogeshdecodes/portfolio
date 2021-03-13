@@ -118,7 +118,7 @@ const Intro = () => {
         <Heading>Hey, I'm Yogesh  </Heading>
         <Subheading>Full-Stack Developer 🚀</Subheading>
         <Subheading>&</Subheading>
-        <Subheading>UI/UX Enthusiast ⚡</Subheading>
+        <Subheading>UI/UX Designer ⚡</Subheading>
         <Paragraph>I help startups to build best-in-class software products.</Paragraph>
          
         <StyledScrollIcon />

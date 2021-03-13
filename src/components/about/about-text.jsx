@@ -32,7 +32,7 @@ const AboutText = () => {
         >
           @yogeshdecodes
         </a>{" "} (if you'd like to look me up online). I&apos;m a full stack software developer and
-        UI/UX enthusiast based in Delhi, India. When I&apos;m not coding, I&apos;m exploring new places.
+        UI/UX designer based in Delhi, India. When I&apos;m not coding, I&apos;m exploring new places.
       </Paragraph>
       <Paragraph>
       I'm passionate about building things that make a difference. Also, I'm a believer in doing difficult things because they are the most rewarding. Anything that can be classified as technology fascinates me. I enjoy software development because it allows me to blend design with engineering.
