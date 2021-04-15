@@ -30,7 +30,7 @@ const SocialMedia = () => {
   return (
     <SocialMediaList>
       <li>
-        <a href="mailto:hi@yogeshdecodes.com">
+        <a href="mailto:yogeshdecodes@gmail.com">
           <FontAwesomeIcon icon="envelope" size={size} />
         </a>
       </li>
